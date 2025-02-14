@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS Ebook_backend;
+
+CREATE DATABASE Ebook_backend;
+
 -- Enable UUID extension (if needed for unique IDs)
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
@@ -7,9 +11,9 @@ CREATE TABLE IF NOT EXISTS orders (
     email TEXT NOT NULL,
     session_id TEXT UNIQUE NOT NULL,
     amount INTEGER NOT NULL,
-    status TEXT DEFAULT 'pending',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 
 -- Create 'users' table (Optional, if you want user authentication)
 CREATE TABLE IF NOT EXISTS users (
